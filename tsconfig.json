@@ -1,0 +1,23 @@
+{
+    "include": [
+        "./apps/**/*"
+    ],
+    "compilerOptions": {
+        "outDir": "./dist-server",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es6",
+            "es2015.promise"
+        ],
+        "sourceMap": true,
+        "rootDir": ".",
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}

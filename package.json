@@ -1,0 +1,21 @@
+{
+  "name": "amorphic-todo",
+  "version": "1.0.0",
+  "description": "A simple todo app that demonstrates the use of the amorphic framework with an angular frontend.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc && ts-node copyStaticAssets.ts",
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "author": "Nikhil Mashettiwar",
+  "license": "ISC",
+  "dependencies": {
+    "amorphic": "^2.4.10",
+    "typescript": "^2.8.1"
+  },
+  "devDependencies": {
+    "shelljs": "^0.8.2",
+    "ts-node": "^7.0.0"
+  }
+}

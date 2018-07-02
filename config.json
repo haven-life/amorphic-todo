@@ -1,0 +1,13 @@
+{
+    "templateMode": "typescript",
+    "conflictMode": "soft",
+    "sourceMode": "webpack",
+    "port": 3000,
+    "sessionSeconds": 3600,
+    "objectCacheSeconds": 600,
+    "sessionSecret" : "Ey0veeljPcLsHitdxCG2",
+    "applications": {
+        "todo": "dist-server/apps/todo"
+    },
+    "application": "todo"
+}
