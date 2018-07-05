@@ -4,6 +4,8 @@
   "description": "A simple todo app that demonstrates the use of the amorphic framework with an angular frontend.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "serve": "webpack-serve",
     "compile": "tsc && ts-node copyStaticAssets.ts",
     "start": "node app.js",
     "test": "mocha"
@@ -16,7 +18,12 @@
     "typescript": "^2.8.1"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.0",
+    "html-webpack-plugin": "^3.2.0",
     "shelljs": "^0.8.2",
-    "ts-node": "^7.0.0"
+    "ts-node": "^7.0.0",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-serve": "^1.0.4"
   }
 }
