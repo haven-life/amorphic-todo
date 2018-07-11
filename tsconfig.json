@@ -15,7 +15,8 @@
         "sourceMap": true,
         "rootDir": ".",
         "typeRoots": [
-            "./node_modules/@types"
+            "./node_modules/@types",
+            "./*.d.ts"
         ],
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true

@@ -35,14 +35,16 @@ module.exports = () => {
         // Add the loader for .ts files.
         module: {
             rules: [
-                { test: /\.ts?$/, loader: '@ngtools/webpack'},
+                { test: /\.ts?$/, loader: 'awesome-typescript-loader'},
                 {
                     test: /\.html$/,
                     loader:'html-loader',
                     options: {
-                        exportAsEs6Default: 'es6',
                         minimize: true,
-                        collapseWhitespace: true
+                        removeAttributeQuotes: false,
+                        caseSensitive: true,
+                        customAttrSurround: [ [/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/] ],
+                        customAttrAssign: [ /\)?\]?=/ ]
                     }
                 }
             ]
