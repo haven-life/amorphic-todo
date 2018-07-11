@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
 const convert = require('koa-connect');
 const history = require('connect-history-api-fallback');
@@ -33,13 +35,20 @@ module.exports = () => {
         // Add the loader for .ts files.
         module: {
             rules: [
+                { test: /\.ts?$/, loader: '@ngtools/webpack'},
                 {
-                    test: /\.ts?$/,
-                    loader: 'awesome-typescript-loader'
+                    test: /\.html$/,
+                    loader:'html-loader',
+                    options: {
+                        exportAsEs6Default: 'es6',
+                        minimize: true,
+                        collapseWhitespace: true
+                    }
                 }
             ]
         },
         plugins: [
+
             new HtmlWebpackPlugin({
                 template: __dirname + '/apps/todo/public/index.html',
                 output: __dirname + '/dist',
@@ -47,6 +56,11 @@ module.exports = () => {
             }),
             new ScriptExtPlugin({
                 defaultAttribute: 'defer'
+            }),
+            new AngularCompilerPlugin({
+                mainPath: './apps/todo/public/js/main.ts',
+                tsConfigPath: './tsconfig.json',
+                skipCodeGeneration: false
             })
         ],
         serve: {
